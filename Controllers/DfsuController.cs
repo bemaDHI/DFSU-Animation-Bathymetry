@@ -12,7 +12,6 @@ namespace DFSUAnimationDemo.Controllers
     public class DfsuController : ControllerBase
     {
         private readonly string filePath = "./Data/TN2013_12hr_DA_mgL.dfsu";
-        //private readonly string filePath = "./Data/TN_2013_Percentiles_25.dfsu";
         private static byte[]? verticesBuffer = null;
         private static byte[]? allTimestepBuffer = null;
 
