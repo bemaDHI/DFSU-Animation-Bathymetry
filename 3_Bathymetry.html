@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFSU Bathymetry Demo</title>
+    <script src="https://unpkg.com/deck.gl@8.9.36/dist.min.js"></script>
+    <script defer src="3_Bathymetry.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls" style="position: absolute; left: 2rem; top: 2rem; background-color: white; padding: 1rem; z-index: 2;">
+        <form>
+            <input type="checkbox" id="fshow-tile-layer" name="show-tile-layer" onchange="updateShowTileLayer(this);">
+            <label for="fshow-tile-layer">Show tile layer</label>
+            <br />
+            <input type="checkbox" id="fshow-depth" name="show-depth" onchange="updateShowDepth(this);">
+            <label for="fshow-depth">Show depth</label>
+            <br />
+            <label for="fdepth-scale">Depth Scale</label>
+            <input type="range" id="fdepth-scale" name="depth-scale" min="1" max="100" value="50" oninput="updateDepthScale(this);">
+            <br />
+            <label for="fcolor-step">Colour Step</label>
+            <input type="range" id="fcolor-step" name="color-step" min="0.0" max="10.0" value="0.5" step="0.01" oninput="updateColorStep(this);">
+        </form>
+        <p>
+            Hold "shift" when dragging map to change pitch.
+        </p>
+    </div>
+    <div id="container" style="background-color: black;"></div>
+</body>
+</html>

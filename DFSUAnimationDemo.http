@@ -1,0 +1,6 @@
+@DFSUAnimationDemo_HostAddress = http://localhost:5159
+
+GET {{DFSUAnimationDemo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
